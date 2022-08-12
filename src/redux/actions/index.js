@@ -4,6 +4,7 @@ import getCurrencies from '../../api/getCurrencies';
 export const SET_USER_NAME = 'SET_USER_NAME';
 export const SET_CURRENCIES = 'SET_CURRENCIES';
 export const SET_EXPENSES = 'SET_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export const setUserName = (email) => ({
   type: 'SET_USER_NAME',
@@ -18,6 +19,11 @@ export const setCurrencies = (currencies) => ({
 export const setExpenses = (state, expense) => ({
   type: 'SET_EXPENSES',
   payload: { ...state, exchangeRates: expense },
+});
+
+export const deleteExpenses = (expense) => ({
+  type: 'DELETE_EXPENSES',
+  payload: expense,
 });
 
 export const fetchCurrenciesThunk = () => async (dispatch) => {
